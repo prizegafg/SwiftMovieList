@@ -6,19 +6,19 @@
 	<dict>
 		<key>Headers/Alamofire-Swift.h</key>
 		<data>
-		aEJ0TzNcquKU82QfASAA3NMjBjM=
+		oWNRb7PV11NHkb4cuRhwW8H6v60=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		uOXOMJ1/5/mld9FWLTip3J7Z5c0=
+		DmaEjOnUC3yAZA8XMnG0YpzEADs=
 		</data>
 		<key>Modules/Alamofire.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		MVyUVgAZdSvJIilwuTrhvpLE95Q=
+		meHyouDjqmT0wGGa+wxtJnfBH5Q=
 		</data>
 		<key>Modules/Alamofire.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		SQWO3CsDQcbxLtKD9mjkLBy0d0E=
+		Y3JzPOnZo50Z4u+fU64QrywkYmE=
 		</data>
 		<key>Modules/Alamofire.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -26,11 +26,11 @@
 		</data>
 		<key>Modules/Alamofire.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		TJwgROKOXHi/bJgqcrM5HzvyuTI=
+		87ha2JL0zXko2sveGkK93mZ7eq0=
 		</data>
 		<key>Modules/Alamofire.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		RaCw2MfeQT2gacNxam6Lx+99mAM=
+		wX6B6rk9pWCp2+aCLt7lQeKk7sw=
 		</data>
 		<key>Modules/Alamofire.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -38,11 +38,11 @@
 		</data>
 		<key>Modules/Alamofire.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Ws6Nd+Amio8Oky4I3Zzqwr28g0Q=
+		hDOPv6id+rtrbi+rbXjvQzjBswA=
 		</data>
 		<key>Modules/Alamofire.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		LPCdqUM+0xKm2k/RaXAWS/vIJNU=
+		EohVArce+0w4FjGj84VUtn/sSOQ=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -51,33 +51,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			aEJ0TzNcquKU82QfASAA3NMjBjM=
+			oWNRb7PV11NHkb4cuRhwW8H6v60=
 			</data>
 			<key>hash2</key>
 			<data>
-			i6nbO1VRBn/028k4l0RGJVOuXlb5oAdie2XP66Y7nrk=
+			cD2dsPgouLdRc1zl38jky7sFGXzw7ZyJSaogJuzWoCU=
 			</data>
 		</dict>
 		<key>Modules/Alamofire.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			MVyUVgAZdSvJIilwuTrhvpLE95Q=
+			meHyouDjqmT0wGGa+wxtJnfBH5Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			NgbUl1MrRd3YwgdIqS7dINA/X2/aZXPQSPJVfMlRnsU=
+			PKACN/NKPEb0C8KfKCpvrSBs6aT8gsyYytdhL8jh3y4=
 			</data>
 		</dict>
 		<key>Modules/Alamofire.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			SQWO3CsDQcbxLtKD9mjkLBy0d0E=
+			Y3JzPOnZo50Z4u+fU64QrywkYmE=
 			</data>
 			<key>hash2</key>
 			<data>
-			2acnEjH2EX0DbFJBZr4FjjU/W2KPy4UFGJeSrE55Fxk=
+			4kFXUz/bB7zSCZv+4VPDYPQeJio0uk8EgCS8ufZwBJ4=
 			</data>
 		</dict>
 		<key>Modules/Alamofire.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
@@ -95,22 +95,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			TJwgROKOXHi/bJgqcrM5HzvyuTI=
+			87ha2JL0zXko2sveGkK93mZ7eq0=
 			</data>
 			<key>hash2</key>
 			<data>
-			wnmOCy86TgkCjPUAFE2nI+/qHhkmw8gZm4ScgiaqyH8=
+			VRA1q5hqUYszK9zDbp/e6qpT8IXMsmAZdPgKqJvzx6s=
 			</data>
 		</dict>
 		<key>Modules/Alamofire.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			RaCw2MfeQT2gacNxam6Lx+99mAM=
+			wX6B6rk9pWCp2+aCLt7lQeKk7sw=
 			</data>
 			<key>hash2</key>
 			<data>
-			T1s9w1NgwH0HgKlNGhIf6NL4gjwJMm1TcL7pUoCJE6o=
+			Ta7eUjRAVBS1Ob0NclGX8RDuX2cKxZ3U8KNhX5apEkM=
 			</data>
 		</dict>
 		<key>Modules/Alamofire.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -128,22 +128,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Ws6Nd+Amio8Oky4I3Zzqwr28g0Q=
+			hDOPv6id+rtrbi+rbXjvQzjBswA=
 			</data>
 			<key>hash2</key>
 			<data>
-			9XlpBb+/k6omdFiWau1OILu3YHHTSxCB0xLxJtiknJM=
+			EHT7b/j0KyQ6VC2bowscH86bRtfKmPTqK/ONlCJ/CRE=
 			</data>
 		</dict>
 		<key>Modules/Alamofire.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			LPCdqUM+0xKm2k/RaXAWS/vIJNU=
+			EohVArce+0w4FjGj84VUtn/sSOQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			I8396pW7Ki3WrxWk5MSLyzuWRlFD4vM4KlxeEaPmDdg=
+			iDWpA7yftdK7faelPmsSInnaD8MWLhqqCAFMsZtbw50=
 			</data>
 		</dict>
 	</dict>
