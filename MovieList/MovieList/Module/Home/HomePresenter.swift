@@ -9,20 +9,28 @@ import Foundation
 import UIKit
 
 class HomePresenter: VTPHomeProtocol {
-    var view: PTVHomeProtocol?
-    var interactor: PTIHomeProtocol?
-    var router: PTRHomeProtocol?
-    var viewController : HomeView!
     
+    var view: PTVHomeProtocol!
+    var interactor: PTIHomeProtocol!
+    var router: PTRHomeProtocol!
+    var viewController : HomeView!
+
     init() {}
     
     init(viewController: HomeView ) {
         self.viewController = viewController
     }
     
-    func startGetData() {
-        interactor?.getNowPlaying()
-        interactor?.getTopRated()
+    func viewDidLoad() {
+        viewController.setUpView()
+    }
+    
+    
+    func startLoadData() {
+        interactor.fetchNowPlaying()
+        interactor.fetchPopular()
+        interactor.fetchTopRated()
+        interactor.fetchUpcoming()
     }
     
     
@@ -30,16 +38,24 @@ class HomePresenter: VTPHomeProtocol {
 
     //MARK: - Extension HomePresenter
 extension  HomePresenter : ITPHomeProtocol {
-    func onSuccessGetNowPlaying(data: NowPlayingModel) {
-        view?.successGetNowPlaying(data: data)
+    func onSuccessGetNowPlaying(data: MovieModel) {
+        view.successGetNowPlaying(data: data)
     }
     
-    func onSuccessGetTopRated() {
-        view?.successGetTopRated()
+    func onSuccessGetPopular(data: MovieModel) {
+        view?.successGetPopular(data: data)
+    }
+    
+    func onSuccessGetTopRated(data: MovieModel) {
+        view?.successGetTopRated(data: data)
+    }
+    
+    func onSuccessGetUpcoming(data: MovieModel) {
+        view?.successGetUpcoming(data: data)
     }
     
     func onErrorGet(message: String) {
-        view?.errorGet(message: message)
+        view.errorGet(message: message)
     }
     
 

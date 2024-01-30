@@ -7,14 +7,8 @@
 
 import UIKit
 
-class HomeRouter: PTRHomeProtocol {
-    
-    //MARK: - Property HomeRouter
-    
 
-    //MARK: - Lifecycle HomeRouter
-    
-    
+class HomeRouter: PTRHomeProtocol {
     //MARK: - Function HomeRouter
     static func createHomeModule() -> HomeView {
         let view =  HomeView()
@@ -30,6 +24,18 @@ class HomeRouter: PTRHomeProtocol {
         return view
     }
     
+    func navToListView(nav: UINavigationController) {
+        let vw = ListMenuRouter.createListMenuModule()
+        nav.pushViewController(vw, animated: true)
+        
+    }
+    
+    func navToDetail(nav: UINavigationController) {
+        let vw = DetailRouter.createDetailModule()
+        nav.pushViewController(vw, animated: true)
+    }
+    
+    
 }
 
-    //MARK: - Extension HomeRouter
+   

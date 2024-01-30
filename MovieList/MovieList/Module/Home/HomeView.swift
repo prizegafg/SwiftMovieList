@@ -7,39 +7,32 @@
 
 import UIKit
 import Kingfisher
+import SkeletonView
 
-class HomeView: UIViewController {
+
+class HomeView: BaseViewController {
     @IBOutlet weak var lblUserName: UILabel!
-    @IBOutlet weak var vwScrollNowPlaying: UIScrollView!
-    @IBOutlet weak var pcNowPlaying: UIPageControl!
+    @IBOutlet weak var vwTableHome: UITableView!
     
-    
-    var presenter: VTPHomeProtocol?
+    var presenter: VTPHomeProtocol!
     var timer: Timer!
     var imgNowPlaying: [String] = []
     var currentIndex = 0
     
+    var nowPlaying: MovieModel?
+    var popular: MovieModel?
+    var topRated: MovieModel?
+    var upcoming: MovieModel?
     
-    override func viewDidLoad() {
-        setUpView()
-        setUpData()
+    override func setUpView() {
+        lblUserName.text = "Hello, Anonymous"
+        vwTableHome.register(HomeMenuTVC.nib(), forCellReuseIdentifier: HomeMenuTVC.identifier)
+        vwTableHome.delegate = self
+        vwTableHome.dataSource = self
     }
     
-    func setUpView(){
-        vwScrollNowPlaying.isPagingEnabled = true
-        vwScrollNowPlaying.delegate = self
-        vwScrollNowPlaying.contentSize = CGSize(width: vwScrollNowPlaying.frame.width * CGFloat(imgNowPlaying.count), height: vwScrollNowPlaying.frame.height)
-    }
-    
-    func setUpData(){
-        presenter?.startGetData()
-        
-    }
-    
-    @objc func scrollToNextPage() {
-        currentIndex = (currentIndex + 1) % imgNowPlaying.count
-        let x = CGFloat(currentIndex) * vwScrollNowPlaying.frame.size.width
-        vwScrollNowPlaying.setContentOffset(CGPoint(x: x, y: 0), animated: true)
+    override func setUpData() {
+        presenter.startLoadData()
     }
     
     
@@ -49,17 +42,26 @@ class HomeView: UIViewController {
 //MARK: PTV HomeView
 
 extension HomeView: PTVHomeProtocol {
-    func successGetNowPlaying(data: NowPlayingModel) {
-        for movies in data.movies {
-            imgNowPlaying.append(movies.posterPath)
-        }
-        
-        setupScrollView()
-        setupPageControl()
+    
+    
+    func successGetNowPlaying(data: MovieModel) {
+        nowPlaying = data
+        vwTableHome.reloadData()
     }
     
-    func successGetTopRated() {
-        
+    func successGetPopular(data: MovieModel) {
+        popular = data
+        vwTableHome.reloadData()
+    }
+    
+    func successGetTopRated(data: MovieModel) {
+        topRated = data
+        vwTableHome.reloadData()
+    }
+    
+    func successGetUpcoming(data: MovieModel) {
+        upcoming = data
+        vwTableHome.reloadData()
     }
     
     
@@ -68,33 +70,109 @@ extension HomeView: PTVHomeProtocol {
     }
 }
 
-extension HomeView: UIScrollViewDelegate{
-    func setupScrollView() {
-        for i in 0..<imgNowPlaying.count {
-            let imageView = UIImageView(frame: CGRect(x: CGFloat(i) * vwScrollNowPlaying.frame.width, y: 0, width: vwScrollNowPlaying.frame.width, height: vwScrollNowPlaying.frame.height))
-            imageView.contentMode = .scaleToFill
-            imageView.kf.setImage(with: URL(string: "\(DefaultImageURL)\(imgNowPlaying[i])"))
-            vwScrollNowPlaying.addSubview(imageView)
+extension HomeView: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: HomeMenuTVC.identifier, for: indexPath) as! HomeMenuTVC
+        switch indexPath.row {
+        case 0:
+            var title: [String] = []
+            var rating: [String] = []
+            var image: [String] = []
+            var id: [Int] = []
+            
+            if let dataNow = nowPlaying?.movies{
+                for data in dataNow {
+                    title.append(data.title)
+                    rating.append(String(data.voteAverage))
+                    image.append(data.posterPath)
+                    id.append(data.id)
+                }
+            }
+            
+            
+            let model = HomeRegulerModel(
+                title: title,
+                rating: rating, 
+                image: image,
+                id: id)
+           
+            cell.setUpTableCell(title: "Now Playing", data: model)
+            
+        case 1:
+            var title: [String] = []
+            var rating: [String] = []
+            var image: [String] = []
+            var id: [Int] = []
+            
+            if let dataNow = popular?.movies{
+                for data in dataNow {
+                    title.append(data.title)
+                    rating.append(String(data.voteAverage))
+                    image.append(data.posterPath)
+                    id.append(data.id)
+                }
+            }
+            
+            let model = HomeRegulerModel(
+                title: title,
+                rating: rating,
+                image: image,
+                id: id)
+            cell.setUpTableCell(title: "Popular", data: model)
+            
+        case 2:
+            var title: [String] = []
+            var rating: [String] = []
+            var image: [String] = []
+            var id: [Int] = []
+            
+            if let dataNow = topRated?.movies{
+                for data in dataNow {
+                    title.append(data.title)
+                    rating.append(String(data.voteAverage))
+                    image.append(data.posterPath)
+                    id.append(data.id)
+                }
+            }
+            
+            let model = HomeRegulerModel(
+                title: title,
+                rating: rating,
+                image: image,
+                id: id)
+            cell.setUpTableCell(title: "Top Rated", data: model)
+            
+        case 3:
+            var title: [String] = []
+            var rating: [String] = []
+            var image: [String] = []
+            var id: [Int] = []
+            
+            if let dataNow = upcoming?.movies{
+                for data in dataNow {
+                    title.append(data.title)
+                    rating.append(String(data.voteAverage))
+                    image.append(data.posterPath)
+                    id.append(data.id)
+                }
+            }
+            
+            let model = HomeRegulerModel(
+                title: title,
+                rating: rating,
+                image: image,
+                id: id)
+            cell.setUpTableCell(title: "Upcoming", data: model)
+        default: break
         }
-    }
-    
-    func setupPageControl() {
-        pcNowPlaying.numberOfPages = imgNowPlaying.count
-        pcNowPlaying.currentPage = 0
-        pcNowPlaying.tintColor = UIColor.red
-        pcNowPlaying.pageIndicatorTintColor = UIColor.gray
-        pcNowPlaying.currentPageIndicatorTintColor = UIColor.black
-    }
-    
-    func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(scrollToNextPage), userInfo: nil, repeats: true)
+        
+        return cell
     }
     
     
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let pageIndex = round(scrollView.contentOffset.x / scrollView.frame.size.width)
-        pcNowPlaying.currentPage = Int(pageIndex)
-        currentIndex = Int(pageIndex)
-    }
 }
+
