@@ -23,8 +23,7 @@ class HomeRegulerCVC: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        vwCollection.layer.cornerRadius = 20
-//        vwBackgroundTitle.alpha = 0.5
+        vwCollection.layer.cornerRadius = 40
     }
     
     override func prepareForReuse() {
@@ -32,7 +31,7 @@ class HomeRegulerCVC: UICollectionViewCell {
         lblTitle.text = ""
         lblRating.text = "Rating : "
         imgCollection.image = UIImage(named: "")
-        vwCollection.layer.cornerRadius = 20
+        vwCollection.layer.cornerRadius = 40
     }
     
     func setUpCell(title: String, rating: String, image: String){
@@ -40,7 +39,7 @@ class HomeRegulerCVC: UICollectionViewCell {
             lblTitle.text = title
             lblRating.text = "Rating : \(rating)"
             imgCollection.kf.setImage(with: URL(string: "\(DefaultImageURL)\(image)"))
-            vwCollection.layer.cornerRadius = 20
+            vwCollection.layer.cornerRadius = 40
             hideSkeleton()
         } else {
             let gradient = SkeletonGradient(baseColor: UIColor.clouds)

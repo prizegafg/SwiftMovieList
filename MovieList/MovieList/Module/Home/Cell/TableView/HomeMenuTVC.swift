@@ -13,6 +13,8 @@ class HomeMenuTVC: UITableViewCell {
     @IBOutlet weak var vwCollectionCard: UICollectionView!
     
     var dataMain: HomeRegulerModel?
+    weak var presenter: VTPHomeProtocol?
+    var navigationController: UINavigationController?
     
     static let identifier = "HomeMenuTVC"
     static func nib() -> UINib {
@@ -58,13 +60,9 @@ extension HomeMenuTVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // Handle cell selection here
         print("Selected item at indexPath: \(indexPath)")
-        
-        // Example: Get the selected cell
-        if let cell = collectionView.cellForItem(at: indexPath) {
-            // Do something with the selected cell
-            
+        if let navController = navigationController {
+            presenter?.goToDetail(id: dataMain?.id[indexPath.item] ?? 0, nav: navController)
         }
     }
     
@@ -75,7 +73,7 @@ extension HomeMenuTVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
         let image = dataMain?.image == [""] ? "" : dataMain?.image[indexPath.item] ?? ""
         
         cell.setUpCell(title: title, rating: rating, image: image)
-        cell.vwCollection.layer.cornerRadius = 20
+        cell.vwCollection.layer.cornerRadius = 60
         cell.showAnimatedGradientSkeleton()
         return cell
     }

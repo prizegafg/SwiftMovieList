@@ -9,16 +9,10 @@ import UIKit
 
 class DetailRouter: PTRDetailProtocol {
     
-    //MARK: - Property DetailRouter
-    
-
-    //MARK: - Lifecycle DetailRouter
-    
-    
     //MARK: - Function DetailRouter
     static func createDetailModule() -> DetailView {
         let view =  DetailView()
-        let presenter =  DetailPresenter(viewController: view)
+        let presenter =  DetailPresenter()
         let interactor : PTIDetailProtocol =  DetailInteractor()
         let router : PTRDetailProtocol =  DetailRouter()
         

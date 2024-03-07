@@ -42,6 +42,20 @@ class HomeView: BaseViewController {
 //MARK: PTV HomeView
 
 extension HomeView: PTVHomeProtocol {
+    func successGetMovie(data: MovieModel, page: Int) {
+        switch page{
+        case 1:
+            nowPlaying = data
+        case 2:
+            popular = data
+        case 3:
+            topRated = data
+        case 4:
+            upcoming = data
+        default:
+            break
+        }
+    }
     
     
     func successGetNowPlaying(data: MovieModel) {
@@ -77,6 +91,8 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeMenuTVC.identifier, for: indexPath) as! HomeMenuTVC
+        cell.navigationController = self.navigationController
+        cell.presenter = presenter
         switch indexPath.row {
         case 0:
             var title: [String] = []

@@ -11,7 +11,50 @@ import SwiftyJSON
 import UIKit
 
 class HomeInteractor: PTIHomeProtocol{
+    func fetchMovieList(url: String, page: Int) {
+        let headers: HTTPHeaders = [
+            "accept": "application/json",
+            "Authorization": apiKey
+        ]
+        
+        AF.request(url, method: .get, headers: headers).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                let dataJson = MovieModel(json: json)
+                print("Success Now Playing")
+                print(dataJson)
+                self.presenter?.onSuccessGetMovie(data: dataJson, page: page)
+                
+            case .failure(let error):
+                let stringError = AFErrorToString.convertToString(error)
+                self.presenter?.onErrorGet(message: stringError)
+            }
+        }
+    }
+    
     var presenter: ITPHomeProtocol?
+    
+    func fetchGenre(){
+        let headers: HTTPHeaders = [
+          "accept": "application/json",
+          "Authorization": apiKey
+        ]
+        
+        AF.request(urlGenre, method: .get, headers: headers).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                let dataJson = GenreModel(json: json)
+                
+                
+            case .failure(let error):
+                let stringError = AFErrorToString.convertToString(error)
+                self.presenter?.onErrorGet(message: stringError)
+            }
+        }
+
+    }
     
     func fetchNowPlaying() {
         let headers: HTTPHeaders = [

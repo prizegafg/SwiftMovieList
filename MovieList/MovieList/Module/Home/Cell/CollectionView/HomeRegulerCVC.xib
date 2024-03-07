@@ -19,9 +19,21 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90R-TA-UPe">
                         <rect key="frame" x="0.0" y="0.0" width="180" height="366"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z0h-vV-TPk">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dGq-W6-ZlM">
                                 <rect key="frame" x="0.0" y="0.0" width="180" height="306"/>
-                            </imageView>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z0h-vV-TPk">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="306"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Z0h-vV-TPk" secondAttribute="trailing" id="BEN-Y7-EYI"/>
+                                    <constraint firstItem="Z0h-vV-TPk" firstAttribute="top" secondItem="dGq-W6-ZlM" secondAttribute="top" id="UK0-oB-4Tw"/>
+                                    <constraint firstAttribute="bottom" secondItem="Z0h-vV-TPk" secondAttribute="bottom" id="qJs-Sg-RGh"/>
+                                    <constraint firstItem="Z0h-vV-TPk" firstAttribute="leading" secondItem="dGq-W6-ZlM" secondAttribute="leading" id="tgT-JI-PbX"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MNu-wy-ZvC">
                                 <rect key="frame" x="0.0" y="306" width="180" height="60"/>
                                 <subviews>
@@ -57,11 +69,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="MNu-wy-ZvC" firstAttribute="leading" secondItem="90R-TA-UPe" secondAttribute="leading" id="0Mz-78-8tJ"/>
-                            <constraint firstItem="MNu-wy-ZvC" firstAttribute="top" secondItem="Z0h-vV-TPk" secondAttribute="bottom" id="0U3-mF-zO6"/>
-                            <constraint firstItem="Z0h-vV-TPk" firstAttribute="top" secondItem="90R-TA-UPe" secondAttribute="top" id="1DH-pC-49z"/>
                             <constraint firstAttribute="trailing" secondItem="MNu-wy-ZvC" secondAttribute="trailing" id="4BI-VT-aoJ"/>
-                            <constraint firstAttribute="trailing" secondItem="Z0h-vV-TPk" secondAttribute="trailing" id="IUu-lL-bBE"/>
-                            <constraint firstItem="Z0h-vV-TPk" firstAttribute="leading" secondItem="90R-TA-UPe" secondAttribute="leading" id="Sg3-QA-Nkr"/>
+                            <constraint firstAttribute="trailing" secondItem="dGq-W6-ZlM" secondAttribute="trailing" id="50c-I9-FHJ"/>
+                            <constraint firstItem="dGq-W6-ZlM" firstAttribute="leading" secondItem="90R-TA-UPe" secondAttribute="leading" id="IsL-r6-lfA"/>
+                            <constraint firstItem="dGq-W6-ZlM" firstAttribute="top" secondItem="90R-TA-UPe" secondAttribute="top" id="S2i-2i-Tfq"/>
+                            <constraint firstItem="MNu-wy-ZvC" firstAttribute="top" secondItem="dGq-W6-ZlM" secondAttribute="bottom" id="dBN-r5-ANZ"/>
                             <constraint firstAttribute="bottom" secondItem="MNu-wy-ZvC" secondAttribute="bottom" id="pXC-l6-DPX"/>
                         </constraints>
                     </view>

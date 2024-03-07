@@ -60,6 +60,24 @@ struct MovieData: Codable {
 }
 
 
+struct GenreDetails {
+    let id: Int
+    let name: String
+    
+    init(json: JSON) {
+        self.id = json["id"].intValue
+        self.name = json["name"].stringValue
+    }
+}
+
+struct GenreModel {
+    let genres: [GenreDetails]
+    
+    init(json: JSON) {
+        self.genres = json["genres"].arrayValue.map { GenreDetails(json: $0) }
+    }
+}
+
 
 
 

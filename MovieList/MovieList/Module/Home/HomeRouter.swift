@@ -12,7 +12,7 @@ class HomeRouter: PTRHomeProtocol {
     //MARK: - Function HomeRouter
     static func createHomeModule() -> HomeView {
         let view =  HomeView()
-        let presenter =  HomePresenter(viewController: view)
+        let presenter =  HomePresenter()
         let interactor : PTIHomeProtocol =  HomeInteractor()
         let router : PTRHomeProtocol =  HomeRouter()
         
@@ -24,14 +24,15 @@ class HomeRouter: PTRHomeProtocol {
         return view
     }
     
-    func navToListView(nav: UINavigationController) {
+    func navToListView(data: MovieModel, nav: UINavigationController) {
         let vw = ListMenuRouter.createListMenuModule()
         nav.pushViewController(vw, animated: true)
         
     }
     
-    func navToDetail(nav: UINavigationController) {
+    func navToDetail(id: Int, nav: UINavigationController) {
         let vw = DetailRouter.createDetailModule()
+        vw.movieId = id
         nav.pushViewController(vw, animated: true)
     }
     

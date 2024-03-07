@@ -9,22 +9,27 @@ import Foundation
 import UIKit
 
 class DetailPresenter: VTPDetailProtocol {
-    
     var view: PTVDetailProtocol?
     var interactor: PTIDetailProtocol?
     var router: PTRDetailProtocol?
-    var viewController : DetailView!
-
-    init() {}
     
-    init(viewController: DetailView ) {
-        self.viewController = viewController
+    func startFetchDetail(id: Int) {
+        interactor?.fetchMovieDetail(id: id)
     }
+    
     
     
     
 }
 
 extension  DetailPresenter : ITPDetailProtocol {
+    func onSuccessDetail(data: MovieDetailModel) {
+        view?.successDetail(data: data)
+    }
+    
+    func onErrorGet(message: String) {
+        view?.errorGet(message: message)
+    }
+    
 
 }
