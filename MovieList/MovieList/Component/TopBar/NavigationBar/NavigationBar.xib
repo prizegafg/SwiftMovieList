@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavigationBar" customModule="MovieList" customModuleProvider="target">
+            <connections>
+                <outlet property="btnBack" destination="HTR-MF-V6X" id="0mU-Yu-b33"/>
+                <outlet property="lblTitle" destination="dWn-uL-HXe" id="LA3-iv-oBI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="70"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTR-MF-V6X">
+                    <rect key="frame" x="20" y="10" width="40" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="M4e-dy-10Q"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWn-uL-HXe">
+                    <rect key="frame" x="70" y="24.666666666666671" width="253" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="dWn-uL-HXe" firstAttribute="leading" secondItem="HTR-MF-V6X" secondAttribute="trailing" constant="10" id="GiN-10-b4P"/>
+                <constraint firstItem="HTR-MF-V6X" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="IdX-Xe-0Yp"/>
+                <constraint firstAttribute="bottom" secondItem="HTR-MF-V6X" secondAttribute="bottom" constant="10" id="SXd-ZR-sb1"/>
+                <constraint firstAttribute="trailing" secondItem="dWn-uL-HXe" secondAttribute="trailing" constant="70" id="cQd-Ht-8ZA"/>
+                <constraint firstItem="HTR-MF-V6X" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="czd-Uw-53g"/>
+                <constraint firstItem="dWn-uL-HXe" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="h4E-85-67v"/>
+                <constraint firstItem="dWn-uL-HXe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pGO-tt-roT"/>
+                <constraint firstItem="HTR-MF-V6X" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="qmd-bD-SZq"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-14.503816793893129" y="-255.63380281690141"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chevron.backward" catalog="system" width="97" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

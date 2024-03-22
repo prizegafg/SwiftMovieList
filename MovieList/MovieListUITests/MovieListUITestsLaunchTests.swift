@@ -2,7 +2,7 @@
 //  MovieListUITestsLaunchTests.swift
 //  MovieListUITests
 //
-//  Created by MAYU on 06/01/24.
+//  Created by Prizega on 21/03/24.
 //
 
 import XCTest
